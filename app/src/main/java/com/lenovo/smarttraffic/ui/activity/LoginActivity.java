@@ -68,6 +68,13 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         mTextInputLayoutPswd.setErrorEnabled(true);
         Button loginButton = findViewById(R.id.loginBtn);
         loginButton.setOnClickListener(this);
+        Button regButton = findViewById(R.id.regBtn);
+        regButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         mEditTextName.addTextChangedListener(new TextWatcher() {
             @Override/*内容要改变之前调用*/
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -136,13 +143,15 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             finish();
             return true;
         }
+        if (item.getItemId() == R.id.action_settings) {
+            showSettings();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
     private void showSettings() {
         String ip = InitApp.sp.getString("ip", "192.168.95.110");
-        String[] str_ip = ip.split(".");
-        String port = InitApp.sp.getString("port", "8081");
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         AlertDialog dialog = builder.create();
         View inflate = View.inflate(this, R.layout.ipsettings, null);
@@ -155,10 +164,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         Button bt_qx = inflate.findViewById(R.id.bt_qx);
         dialog.setView(inflate);
         dialog.show();
-        et_ip1.setHint(str_ip[0]);
-        et_ip2.setHint(str_ip[1]);
-        et_ip3.setHint(str_ip[2]);
-        et_ip4.setHint(str_ip[3]);
 
         bt_qx.setOnClickListener(view -> {
             dialog.dismiss();
@@ -170,27 +175,16 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             String etip4 = et_ip4.getText().toString();
             String etip = etip1 + "." + etip2 + "." + etip3 + "." + etip4;
             if (TextUtils.isEmpty(etip1) || TextUtils.isEmpty(etip2) || TextUtils.isEmpty(etip3) || TextUtils.isEmpty(etip4)) {
-                InitApp.toast("IP或端口号不能为空");
+                InitApp.toast("IP不能为空");
                 return;
             }
-            String regex = "((25[0-5]|2[0-4]\\d|[0,1]?\\d\\d?)\\.){3}(25[0-5]|2[0-4]\\d|[0,1]?\\d\\d?)";
-            if (!Pattern.compile(regex).matcher(etip).matches()) {
-                InitApp.toast("IP格式错误");
-                return;
-            }
-            int p = Integer.parseInt(etip);
-            if (p > 0 && p < 65535) {
-                if ("192.168.95.110".equals(etip) && 8081 == p) {
-                    InitApp.edit.putString("ip", etip);
-                    InitApp.edit.commit();
-                    InitApp.toast("设置成功");
-                    dialog.dismiss();
-                }else {
-                    InitApp.toast("服务器连接失败");
-                }
+            if(!etip.equals("192.168.95.110")){
+                InitApp.toast("输入错误");
             }else {
-                InitApp.toast("端口号错误");
+                InitApp.toast("设置成功");
+                dialog.dismiss();
             }
+
         });
     }
 

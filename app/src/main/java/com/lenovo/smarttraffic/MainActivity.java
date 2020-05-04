@@ -187,6 +187,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.nav_about:
                 string = "退出登录";
                 InitApp.edit.putBoolean("isLogin",false).commit();
+                InitApp.edit.clear();
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
                 finish();
                 break;

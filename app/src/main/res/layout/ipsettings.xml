@@ -49,6 +49,8 @@
             android:maxLength="3"
             android:textColor="@color/Black"
             android:textSize="25sp"
+            android:gravity="center"
+            android:inputType="number"
             android:background="@drawable/et_border"/>
 
         <TextView
@@ -69,6 +71,8 @@
             android:maxLength="3"
             android:textColor="@color/Black"
             android:textSize="25sp"
+            android:gravity="center"
+            android:inputType="number"
             android:background="@drawable/et_border"/>
 
         <TextView
@@ -89,6 +93,8 @@
             android:maxLength="3"
             android:textColor="@color/Black"
             android:textSize="25sp"
+            android:gravity="center"
+            android:inputType="number"
             android:background="@drawable/et_border"/>
 
         <TextView
@@ -109,6 +115,8 @@
             android:maxLength="3"
             android:textColor="@color/Black"
             android:textSize="25sp"
+            android:inputType="number"
+            android:gravity="center"
             android:background="@drawable/et_border"/>
     </LinearLayout>
     <LinearLayout
