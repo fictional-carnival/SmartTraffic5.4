@@ -5,9 +5,9 @@
     <string name="navigation_drawer_close">关闭侧栏</string>
 
     <string name="head">联想智能交通系统</string>
-    <string name="nav_account">个人</string>
-    <string name="nav_setting">设置</string>
-    <string name="nav_about">关于</string>
+    <string name="nav_account">我的座驾</string>
+    <string name="nav_setting">创意题</string>
+    <string name="nav_about">退出登录</string>
     <string name="click_login">点击头像登录</string>
     <string name="user_login">用户登录</string>
     <string name="net_setting">网络设置</string>
@@ -20,10 +20,11 @@
     <string name="hint_password">密码</string>
     <string name="error_login_empty">用户名不能为空</string>
     <string name="error_pwd_empty">密码不能为空</string>
-    <string name="item1">item1</string>
-    <string name="item2">item2</string>
-    <string name="item3">item3</string>
-    <string name="item4">item4</string>
+    <string name="item1">我的交通</string>
+    <string name="item2">我的日志</string>
+    <string name="item3">公交查询</string>
+    <string name="item4">我的消息</string>
+    <string name="item5">我的租车</string>
     <string name="title_item_main">Tab</string>
     <string name="main_home">主页面</string>
     <string name="creative_design">创意设计</string>

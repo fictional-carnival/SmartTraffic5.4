@@ -159,23 +159,32 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         String string = null;
         switch (id){
             case R.id.nav_account:
-                string = "个人";
+                string = "我的座驾";
                 break;
             case R.id.item_1:
-                string = "item1";
+                string = "我的交通";
                 startActivity(new Intent(this, Item1Activity.class));
                 break;
             case R.id.item_2:
-                string = "item2";
+                string = "我的日志";
                 break;
             case R.id.item_3:
-                string = "item3";
+                string = "公交查询";
+                break;
+            case R.id.item_4:
+                string = "我的消息";
+                break;
+            case R.id.item_5:
+                string = "我的租车";
                 break;
             case R.id.nav_setting:
-                string = "设置";
+                string = "创意题";
                 break;
             case R.id.nav_about:
-                string = "关于";
+                string = "退出登录";
+                InitApp.edit.putBoolean("isLogin",false).commit();
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                finish();
                 break;
         }
         if (!TextUtils.isEmpty(string))

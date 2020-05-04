@@ -13,6 +13,14 @@
         android:id="@+id/login_toolbar"
         layout="@layout/toolbar_main" />
 
+
+    <!--<TextView
+        android:text="语言"
+        android:textColor="@color/Black"
+        android:textSize="@dimen/margin_30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,6 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_name"
+                android:maxLength="16"
                 android:textColorHint="@color/colorGray" />
         </android.support.design.widget.TextInputLayout>
 
@@ -59,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_password"
                 android:inputType="textPassword"
+                android:maxLength="6"
                 android:textColorHint="@color/colorGray" />
         </android.support.design.widget.TextInputLayout>
 
@@ -79,15 +89,16 @@
                 android:gravity="center"
                 android:text="@string/remember_pwd" />
 
-            <CheckBox
-                android:id="@+id/autologCB"
+            <TextView
+                android:id="@+id/textlogCB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/auto_login" />
+                android:text="找回密码"
+                android:textColor="#000"/>
         </LinearLayout>
 
         <LinearLayout
