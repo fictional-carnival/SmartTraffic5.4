@@ -73,6 +73,9 @@
         <activity android:name=".ui.activity.SubActivity"
             android:configChanges="orientation|screenSize|uiMode"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.XxAtivity"
+            android:configChanges="orientation|screenSize|uiMode"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <!--离线地图key-->
         <meta-data
             android:name="com.amap.api.v2.apikey"

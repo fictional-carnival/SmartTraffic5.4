@@ -44,4 +44,8 @@
         <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
     </style>
+
+    <style name="mytab">
+        <item name="android:textSize">@dimen/margin_30</item>
+    </style>
 </resources>

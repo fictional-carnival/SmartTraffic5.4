@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="xx">
+        <item>全部</item>
+        <item>PM2.5</item>
+        <item>路况</item>
+        <item>光照强度</item>
+    </string-array>
+</resources>

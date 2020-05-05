@@ -1,11 +1,16 @@
 package com.lenovo.smarttraffic.ui.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import com.lenovo.smarttraffic.InitApp;
+import com.lenovo.smarttraffic.R;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportActivity;
@@ -24,7 +29,11 @@ public abstract class BaseActivity extends SupportActivity{
      * 初始化 Toolbar
      */
     public void initToolBar(Toolbar toolbar, boolean homeAsUpEnabled, String title) {
-        toolbar.setTitle(title);
+        TextView textView = findViewById(R.id.tv_title);
+        textView.setText(title);
+        toolbar.setTitle("");
+//        toolbar.setBackgroundColor(Color.WHITE);
+//        toolbar.setTitle(title);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(homeAsUpEnabled);
     }

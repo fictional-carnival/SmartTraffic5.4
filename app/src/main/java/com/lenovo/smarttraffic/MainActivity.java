@@ -21,6 +21,7 @@ import com.lenovo.smarttraffic.ui.activity.Item1Activity;
 import com.lenovo.smarttraffic.ui.activity.LoginActivity;
 import com.lenovo.smarttraffic.ui.activity.SubActivity;
 import com.lenovo.smarttraffic.ui.activity.WdZjActivity;
+import com.lenovo.smarttraffic.ui.activity.XxAtivity;
 import com.lenovo.smarttraffic.ui.fragment.DesignFragment;
 import com.lenovo.smarttraffic.ui.fragment.MainContentFragment;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -177,6 +178,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 break;
             case R.id.item_4:
                 string = "我的消息";
+                startActivity(new Intent(this, XxAtivity.class));
                 break;
             case R.id.item_5:
                 string = "我的租车";

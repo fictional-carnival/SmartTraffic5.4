@@ -27,12 +27,11 @@ import java.util.List;
 import butterknife.BindView;
 
 public class SubActivity extends BaseActivity{
-    @BindView(R.id.el_sub)
-    ExpandableListView el_sub;
     private Gson gson;
     private Intent intent;
     private List<Line.ROWSDETAILBean> beanList;
     private PopupWindow popupWindow;
+    private ExpandableListView el_sub;
 
     @Override
     protected int getLayout() {
@@ -45,6 +44,7 @@ public class SubActivity extends BaseActivity{
         initToolBar(findViewById(R.id.toolbar), true, getString(R.string.item6));
         intent = new Intent(this, SubXqActivity.class);
         gson = new Gson();
+        el_sub = findViewById(R.id.el_sub);
         initData();
     }
     private void initData() {
