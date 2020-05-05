@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar_main" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="450dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_sub"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/margin_50"
+                android:text="sdfsa"
+                android:textSize="35sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="@dimen/margin_50">
+
+                <TextView
+                    android:id="@+id/tv_dsub"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/sub_blue"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:padding="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="sdfdsaf"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_hc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_weight="1"
+                    android:background="@drawable/sub_bg"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:padding="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="sdfdsaf"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tv_dmoney"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_30"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:padding="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="sdfdsaf"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGray"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingLeft="55dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开往"
+                        android:textSize="@dimen/margin_30" />
+
+                    <TextView
+                        android:id="@+id/tv_start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开往"
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="方向"
+                        android:textSize="@dimen/margin_30" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_sstime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/tie1"
+                    android:gravity="center"
+                    android:text="方向"
+                    android:textSize="@dimen/margin_30" />
+
+                <TextView
+                    android:id="@+id/tv_setime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/tie2"
+                    android:gravity="center"
+                    android:text="方向"
+                    android:textSize="@dimen/margin_30" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGray"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingLeft="55dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开往"
+                        android:textSize="@dimen/margin_30" />
+
+                    <TextView
+                        android:id="@+id/tv_end"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="开往"
+                        android:textSize="35sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="方向"
+                        android:textSize="@dimen/margin_30" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_estime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/tie1"
+                    android:gravity="center"
+                    android:text="方向"
+                    android:textSize="@dimen/margin_30" />
+
+                <TextView
+                    android:id="@+id/tv_eetime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/tie2"
+                    android:gravity="center"
+                    android:text="方向"
+                    android:textSize="@dimen/margin_30" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_30"
+                android:paddingLeft="@dimen/margin_50"
+                android:text="途径站点"
+                android:textSize="35sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridView
+                android:id="@+id/gv_sub"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="@dimen/margin_50" />
+        </LinearLayout>
+    </HorizontalScrollView>
+</LinearLayout>

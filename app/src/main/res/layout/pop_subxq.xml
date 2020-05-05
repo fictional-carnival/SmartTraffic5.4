@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:id="@+id/tv_qp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingRight="@dimen/margin_30"
+    android:paddingLeft="@dimen/margin_30"
+    android:text="dfdsfs"
+    android:textSize="16sp"
+    android:textColor="@color/Black"
+    android:background="@drawable/sub_bg"
+    android:layout_height="wrap_content" />

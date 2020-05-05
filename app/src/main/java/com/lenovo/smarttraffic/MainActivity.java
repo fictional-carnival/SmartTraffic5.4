@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.lenovo.smarttraffic.ui.activity.BaseActivity;
 import com.lenovo.smarttraffic.ui.activity.Item1Activity;
 import com.lenovo.smarttraffic.ui.activity.LoginActivity;
+import com.lenovo.smarttraffic.ui.activity.SubActivity;
 import com.lenovo.smarttraffic.ui.activity.WdZjActivity;
 import com.lenovo.smarttraffic.ui.fragment.DesignFragment;
 import com.lenovo.smarttraffic.ui.fragment.MainContentFragment;
@@ -168,7 +169,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 startActivity(new Intent(this, Item1Activity.class));
                 break;
             case R.id.item_2:
-                string = "我的日志";
                 string = "我的座驾";
 
                 break;
@@ -180,6 +180,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 break;
             case R.id.item_5:
                 string = "我的租车";
+                break;
+            case R.id.item_6:
+                string = "地铁交通";
+                startActivity(new Intent(this, SubActivity.class));
                 break;
             case R.id.nav_setting:
                 string = "创意题";
