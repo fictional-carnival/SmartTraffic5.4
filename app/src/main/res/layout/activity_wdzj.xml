@@ -67,7 +67,7 @@
                                 android:gravity="center"
                                 android:text="1000"
                                 android:id="@+id/tv_3"
-                                android:background="@drawable/border_elipse_white"
+                                android:background="@drawable/border_elipse"
                                 android:textSize="25dp"
                                 android:layout_width="90dp"
                                 android:layout_height="90dp" />
@@ -115,7 +115,7 @@
                                 android:gravity="center"
                                 android:text="1000"
                                 android:id="@+id/tv_6"
-                                android:background="@drawable/border_elipse_white"
+                                android:background="@drawable/border_elipse"
                                 android:textSize="25dp"
                                 android:layout_width="90dp"
                                 android:layout_height="90dp" />
@@ -170,7 +170,7 @@
                                 android:gravity="center"
                                 android:text="1000"
                                 android:id="@+id/tv_9"
-                                android:background="@drawable/border_elipse_white"
+                                android:background="@drawable/border_elipse"
                                 android:textSize="25dp"
                                 android:layout_width="90dp"
                                 android:layout_height="90dp" />
@@ -220,7 +220,7 @@
                                 android:gravity="center"
                                 android:text="1000"
                                 android:id="@+id/tv_12"
-                                android:background="@drawable/border_elipse_white"
+                                android:background="@drawable/border_elipse"
                                 android:textSize="25dp"
                                 android:layout_width="90dp"
                                 android:layout_height="90dp" />

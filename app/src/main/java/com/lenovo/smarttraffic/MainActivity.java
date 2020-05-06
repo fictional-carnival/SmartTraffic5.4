@@ -14,8 +14,10 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lenovo.smarttraffic.bean.User;
 import com.lenovo.smarttraffic.ui.activity.BaseActivity;
 import com.lenovo.smarttraffic.ui.activity.Item1Activity;
 import com.lenovo.smarttraffic.ui.activity.LoadLampActivity;
@@ -45,6 +47,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private static final int FRAGMENT_MAIN = 0;
     private static final int FRAGMENT_DESIGN = 1;
     private BottomNavigationView bottom_navigation;
+    private CircleImageView imageView;
+    private TextView textView;
     //    private int position;
 
     @Override
@@ -110,7 +114,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         mDrawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         bottom_navigation = findViewById(R.id.bottom_navigation);
-        CircleImageView imageView = navigationView.getHeaderView(0).findViewById(R.id.ivAvatar);
+        imageView = navigationView.getHeaderView(0).findViewById(R.id.ivAvatar);
+        textView = navigationView.getHeaderView(0).findViewById(R.id.textView);
         setSupportActionBar(mToolbar);
         imageView.setOnClickListener(this);
         /*设置选择item监听*/
@@ -181,7 +186,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.item_4:
                 string = "我的消息";
                 startActivity(new Intent(this, XxAtivity.class));
-
                 break;
             case R.id.item_5:
                 string = "我的租车";
@@ -206,7 +210,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 InitApp.edit.putBoolean("isLogin",false).commit();
                 InitApp.edit.clear();
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-                finish();
                 break;
         }
         if (!TextUtils.isEmpty(string))
@@ -223,5 +226,22 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             startActivity(intent);
         }
         mDrawer.closeDrawer(GravityCompat.START);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (InitApp.sp.getBoolean("isLogin", false)) {
+            User.ROWSDETAILBean user = InitApp.getUser("username", InitApp.sp.getString("UserName", null));
+            if ("女".equals(user.getPsex())) {
+                imageView.setImageResource(R.mipmap.touxiang_1);
+            }else {
+                imageView.setImageResource(R.mipmap.touxiang_2);
+            }
+            textView.setText("您好，"+user.getPname());
+        }else {
+            textView.setText("点击头像登录");
+            imageView.setImageResource(R.mipmap.touxiang_2);
+        }
     }
 }
