@@ -245,7 +245,7 @@
                     android:textSize="35dp"
                     android:layout_margin="30dp"
                     android:textStyle="bold"
-                    android:text="远程控制"
+                    android:text="远程控制："
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -463,7 +463,7 @@
                     android:textSize="35dp"
                     android:layout_margin="30dp"
                     android:textStyle="bold"
-                    android:text="远程控制"
+                    android:text="充值记录："
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -501,7 +501,7 @@
                         android:background="#ccc"
                         android:textSize="25dp"
                         android:text="充值金额"
-                        android:layout_width="200dp"
+                        android:layout_width="245dp"
                         android:layout_height="40dp" />
                 </LinearLayout>
 
@@ -522,6 +522,7 @@
             android:layout_height="70dp">
 
             <TextView
+                android:textStyle="bold"
                 android:layout_marginRight="150dp"
                 android:id="@+id/tv_tab_1"
                 android:textSize="35dp"

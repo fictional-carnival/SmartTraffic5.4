@@ -19,6 +19,9 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -40,6 +43,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 
@@ -69,6 +74,7 @@ public class WdZjActivity extends BaseActivity {
     private LinearLayout ll_content3;
     private LinearLayout ll_content2;
     private LinearLayout ll_content1;
+    private Timer timer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -203,14 +209,14 @@ public class WdZjActivity extends BaseActivity {
         }
         for (int i = 1; i <= 4;i++) {
             if (carInfos.get(i-1).getMoney() < 100) {
-                textViews.get(i * 2 - 1).setText("警告");
+                textViews.get(i * 3-1).setText("警告");
                 linearLayouts.get(i - 1).setBackgroundColor(Color.RED);
                 setNotify(i,"警告",i+"号小车余额不足");
             } else {
-                textViews.get(i * 2 - 1).setText("正常");
+                textViews.get(i * 3-1).setText("正常");
                 linearLayouts.get(i - 1).setBackgroundColor(Color.GREEN);
             }
-            textViews.get(i*3-1).setText(carInfos.get(i-1).getMoney()+"");
+            textViews.get(i*3).setText(carInfos.get(i-1).getMoney()+"");
         }
         for (int i = 0; i < 4; i++) {
             int finalI = i;
@@ -257,6 +263,30 @@ public class WdZjActivity extends BaseActivity {
                 }
             });
         }
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        for (int i = 0; i < carInfos.size(); i++) {
+                            if (carInfos.get(i).getStatus() == 1 && carInfos.get(i).getMoney() > 0) {
+                                carInfos.get(i).setMoney(carInfos.get(i).getMoney() - 1);
+                                zuoJia.setHistory(historys);
+                                zuoJia.setCarInfo(carInfos);
+                                InitApp.edit.putString(Sputil.ZJINFO, new Gson().toJson(zuoJia)).commit();
+                            }
+                        }
+                        timer.cancel();
+                        InitData();
+                    }
+                });
+            }
+        }, 5000, 5000);
+
+        HistoryAdapter historyAdapter = new HistoryAdapter();
+        lv_list.setAdapter(historyAdapter);
     }
 
     private void popsite(int i) {
@@ -285,6 +315,7 @@ public class WdZjActivity extends BaseActivity {
                         zuoJia.setCarInfo(carInfos);
                         InitApp.edit.putString(Sputil.ZJINFO, new Gson().toJson(zuoJia)).commit();
                         popupWindow.dismiss();
+                        timer.cancel();
                         InitData();
                     }
                 }
@@ -371,4 +402,64 @@ public class WdZjActivity extends BaseActivity {
 
     }
 
+    private class HistoryAdapter extends BaseAdapter {
+        @Override
+        public int getCount() {
+            return historys.size();
+        }
+
+        @Override
+        public ZuoJia.HistoryBean getItem(int i) {
+            return historys.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return i;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            View cv;
+            if (view == null) {
+                cv = View.inflate(getApplicationContext(), R.layout.histry_list, null);
+            } else {
+                cv = view;
+            }
+
+            TextView tv_1 = cv.findViewById(R.id.hs_1);
+            TextView tv_2 = cv.findViewById(R.id.hs_2);
+            TextView tv_3 = cv.findViewById(R.id.hs_3);
+            TextView tv_4 = cv.findViewById(R.id.hs_4);
+            TextView tv_delete = cv.findViewById(R.id.tv_delete);
+            tv_1.setText(i + 1 + "");
+            tv_2.setText(getItem(i).getName()+"");
+            tv_3.setText(getItem(i).getMoney()+"");
+            tv_4.setText(getItem(i).getDatetime());
+            cv.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    if (tv_delete.getVisibility() == View.VISIBLE) {
+                        tv_delete.setVisibility(View.GONE);
+                    } else {
+                        tv_delete.setVisibility(View.VISIBLE);
+                    }
+                    return true;
+                }
+            });
+            tv_delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    InitApp.toast("删除成功！");
+                    historys.remove(i);
+                    zuoJia.setHistory(historys);
+                    zuoJia.setCarInfo(carInfos);
+                    InitApp.edit.putString(Sputil.ZJINFO, new Gson().toJson(zuoJia)).commit();
+                    notifyDataSetChanged();
+                    tv_delete.setVisibility(View.GONE);
+                }
+            });
+            return cv;
+        }
+    }
 }

@@ -18,9 +18,12 @@ import android.widget.Toast;
 
 import com.lenovo.smarttraffic.ui.activity.BaseActivity;
 import com.lenovo.smarttraffic.ui.activity.Item1Activity;
+import com.lenovo.smarttraffic.ui.activity.LoadLampActivity;
 import com.lenovo.smarttraffic.ui.activity.LoginActivity;
+import com.lenovo.smarttraffic.ui.activity.LxActivity;
 import com.lenovo.smarttraffic.ui.activity.SubActivity;
 import com.lenovo.smarttraffic.ui.activity.WdZjActivity;
+import com.lenovo.smarttraffic.ui.activity.WodeTrafficActivity;
 import com.lenovo.smarttraffic.ui.activity.XxAtivity;
 import com.lenovo.smarttraffic.ui.fragment.DesignFragment;
 import com.lenovo.smarttraffic.ui.fragment.MainContentFragment;
@@ -167,11 +170,10 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 break;
             case R.id.item_1:
                 string = "我的交通";
-                startActivity(new Intent(this, Item1Activity.class));
+                startActivity(new Intent(this, WodeTrafficActivity.class));
                 break;
             case R.id.item_2:
                 string = "我的座驾";
-
                 break;
             case R.id.item_3:
                 string = "公交查询";
@@ -179,13 +181,22 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.item_4:
                 string = "我的消息";
                 startActivity(new Intent(this, XxAtivity.class));
+
                 break;
             case R.id.item_5:
                 string = "我的租车";
                 break;
             case R.id.item_6:
+                string = "离线地图";
+                startActivity(new Intent(this, LxActivity.class));
+                break;
+            case R.id.item_7:
                 string = "地铁交通";
                 startActivity(new Intent(this, SubActivity.class));
+                break;
+            case R.id.item_8:
+                string = "我的路灯";
+                startActivity(new Intent(this, LoadLampActivity.class));
                 break;
             case R.id.nav_setting:
                 string = "创意题";

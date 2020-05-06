@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">SmartTraffic</string>
     <string name="title_activity_mine">个人中心</string>
     <string name="navigation_drawer_open">打开侧栏</string>
@@ -25,6 +25,9 @@
     <string name="item3">公交查询</string>
     <string name="item4">我的消息</string>
     <string name="item5">我的租车</string>
+    <string name="item6" tools:ignore="DuplicateDefinition">离线地图</string>
+    <string name="item7">地铁公交</string>
+    <string name="item8">我的路灯</string>
     <string name="title_item_main">Tab</string>
     <string name="main_home">主页面</string>
     <string name="creative_design">创意设计</string>
@@ -107,7 +110,6 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
-    <string name="item6">地铁交通</string>
 
 
 </resources>

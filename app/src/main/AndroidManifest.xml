@@ -62,6 +62,15 @@
         <activity android:name=".ui.activity.WdZjActivity"
             android:configChanges="orientation|screenSize|uiMode"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.WodeTrafficActivity"
+            android:configChanges="orientation|screenSize|uiMode"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.LxActivity"
+            android:configChanges="orientation|screenSize|uiMode"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.LoadLampActivity"
+            android:configChanges="orientation|screenSize|uiMode"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.activity.ChannelActivity"
             android:configChanges="orientation|screenSize|uiMode"

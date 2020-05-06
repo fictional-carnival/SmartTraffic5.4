@@ -41,7 +41,7 @@ public class SubActivity extends BaseActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initToolBar(findViewById(R.id.toolbar), true, getString(R.string.item6));
+        initToolBar(findViewById(R.id.toolbar), true, getString(R.string.item7));
         intent = new Intent(this, SubXqActivity.class);
         gson = new Gson();
         el_sub = findViewById(R.id.el_sub);

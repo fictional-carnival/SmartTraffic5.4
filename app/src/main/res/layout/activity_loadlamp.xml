@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/list_tab_toolbar"
+        layout="@layout/toolbar_main"/>
+
+    <TextView
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="100dp"
+        android:textStyle="bold"
+        android:text="路灯管理"
+        android:textSize="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_marginRight="230dp"
+            android:layout_marginLeft="100dp"
+            android:textStyle="bold"
+            android:text="当前路灯状态"
+            android:textSize="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <ImageView
+            android:id="@+id/im_lamp"
+            android:src="@drawable/lamp1"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="100dp"
+            android:textStyle="bold"
+            android:text="路灯模式"
+            android:textSize="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginLeft="200dp"
+            android:background="@drawable/border"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_lm_1"
+                android:background="#0f0"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:text="手动"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/tv_lm_2"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:text="自动"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <TextView
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="100dp"
+            android:textStyle="bold"
+            android:text="路灯控制"
+            android:textSize="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:layout_marginLeft="200dp"
+            android:background="@drawable/border"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_lm_3"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:text="打开"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:background="#0f0"
+                android:id="@+id/tv_lm_4"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:text="关闭"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
