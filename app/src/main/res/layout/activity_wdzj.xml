@@ -500,7 +500,7 @@
                         android:gravity="center"
                         android:background="#ccc"
                         android:textSize="25dp"
-                        android:text="充值金额"
+                        android:text="充值时间"
                         android:layout_width="245dp"
                         android:layout_height="40dp" />
                 </LinearLayout>
