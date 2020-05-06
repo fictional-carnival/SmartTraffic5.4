@@ -138,22 +138,28 @@ public class LoadLampActivity extends BaseActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                int random = InitApp.random(1, 100);
-                if (status.equals("2")) {
-                    if (random > 60) {
-                        down = "2";
-                        InitApp.edit.putString(Sputil.DOWN, "2").commit();
-                        im_lamp.setImageResource(R.drawable.lamp1);
-                        tv_3.setBackgroundColor(Color.WHITE);
-                        tv_4.setBackgroundColor(Color.GREEN);
-                    } else {
-                        down = "1";
-                        InitApp.edit.putString(Sputil.DOWN, "1").commit();
-                        im_lamp.setImageResource(R.drawable.lamp2);
-                        tv_3.setBackgroundColor(Color.GREEN);
-                        tv_4.setBackgroundColor(Color.WHITE);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        int random = InitApp.random(1, 100);
+                        if (status.equals("2")) {
+                            if (random > 60) {
+                                down = "2";
+                                InitApp.edit.putString(Sputil.DOWN, "2").commit();
+                                im_lamp.setImageResource(R.drawable.lamp1);
+                                tv_3.setBackgroundColor(Color.WHITE);
+                                tv_4.setBackgroundColor(Color.GREEN);
+                            } else {
+                                down = "1";
+                                InitApp.edit.putString(Sputil.DOWN, "1").commit();
+                                im_lamp.setImageResource(R.drawable.lamp2);
+                                tv_3.setBackgroundColor(Color.GREEN);
+                                tv_4.setBackgroundColor(Color.WHITE);
+                            }
+                        }
                     }
-                }
+                });
+
 
             }
         },3000,3000);
